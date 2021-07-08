@@ -18,6 +18,10 @@ class Pieza:
     def casillas_amenazadas(self):
         return self.__casillas_amenazadas
 
+    @position.setter
+    def set_position(self, position):
+        self.__position = position
+
     @abstractmethod
     def mover(self, posicion):
         pass
@@ -25,6 +29,13 @@ class Pieza:
     @abstractmethod
     def calcular_casillas_amenazadas(self):
         pass
+
+    @abstractmethod
+    def puede_moverse_a(position):
+        pass
+
+    def mismo_color(self, other):
+        return self.color() == self.color()
 
     def __eq__(self, other):
         return self.__class__ == other.__class__ and self.__position == other.__position and self.__color == other
