@@ -1,8 +1,11 @@
-from . import Color, Pieza
+from . import Pieza
 
-class Caballo(Color, Pieza):
-    def __init__(self,color, position):
-        self.__color = Color(color)
-        self.__position = Pieza(position)
+class Caballo(Pieza):
+    def __init__(self, position, color):
+        Pieza.__init__(self, position, color)
 
-    
+    def mover(self, position):
+        pass
+
+    def calcular_casillas_amenazadas(self):
+        pass
