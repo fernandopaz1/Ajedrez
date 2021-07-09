@@ -4,7 +4,6 @@ class Pieza:
         self.__position = position
         self.__color = color
         self.__casillas_amenazadas  = []
-        pass
 
     @property
     def color(self):

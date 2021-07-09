@@ -1,11 +1,13 @@
-from . import Pieza
-
+from tablero import  Posicion
+from .Pieza import Pieza
 class Caballo(Pieza):
     def __init__(self, position, color):
         Pieza.__init__(self, position, color)
 
     def mover(self, position):
-        pass
+        self.set_position(position)
+
 
     def calcular_casillas_amenazadas(self):
-        pass
+        amenazadas = []
+        amenazadas.append(Posicion(self.position))
