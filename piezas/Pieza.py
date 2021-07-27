@@ -1,9 +1,11 @@
 from abc import abstractmethod
+
+
 class Pieza:
     def __init__(self, position, color):
         self.__position = position
         self.__color = color
-        self.__casillas_amenazadas  = []
+        self.__casillas_amenazadas = []
 
     @property
     def color(self):
@@ -24,7 +26,7 @@ class Pieza:
     @abstractmethod
     def mover(self, posicion):
         pass
-    
+
     @abstractmethod
     def calcular_casillas_amenazadas(self):
         pass
@@ -37,7 +39,9 @@ class Pieza:
         return self.color() == self.color()
 
     def __eq__(self, other):
-        return self.__class__ == other.__class__ and self.__position == other.__position and self.__color == other
+        return self.__class__ == other.__class__\
+            and self.position == other.position\
+            and self.color == other
 
     def __hash__(self):
         return hash(self.color()) + hash(self.position())
